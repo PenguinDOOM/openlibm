@@ -27,7 +27,7 @@ build_script:
   - if %ARCH%==i686 ( set EXCEPT=dwarf ) else set EXCEPT=seh
   - if %ARCH%==i686 ( set MINGW=mingw32 ) else set MINGW=mingw64
   - set PATH=C:\MinGW-w64\%ARCH%-6.3.0-posix-%EXCEPT%-rt_v5-rev1\%MINGW%\bin;%PATH%
-  - mingw32-make.exe ARCH=%ARCH% CC=%ARCH%-w64-mingw32-gcc
+  - mingw32-make.exe USEGCC=1 ARCH=%ARCH% CC=%ARCH%-w64-mingw32-gcc
   - mingw32-make.exe test ARCH=%ARCH% CC=%ARCH%-w64-mingw32-gcc
 
 on_finish:
